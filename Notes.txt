@@ -1,0 +1,15 @@
+24/03/2025
+so learning regular-expression or regex
+regex was basically an editor type thing for the early unix days
+for standardization posix was introduced
+  posix -- bre basic regular-expression
+        -- ere extended regular-expression --used nowadays
+the grep u use was actually  g for global and rep is for Regular-Expression and p for printing it 
+.  - it means anything except newline. 
+\ - backward slash it just nulls the effect of keywords
+[] - it means character set anything inside it is included or excluded
+[RC]- it will only match R or C 
+you can make a range inside the character set by writing - sign
+   [A-Z] it will select the char from A-Z.
+
+
