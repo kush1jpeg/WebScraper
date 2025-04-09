@@ -12,5 +12,27 @@ the grep u use was actually  g for global and rep is for Regular-Expression and 
 you can make a range inside the character set by writing - sign
    [A-Z] it will select the char from A-Z.
 
+3/04/25
+so knowing about the tor - although i know a lil bit already
+  Hide your IP address
+  Bypass rate limits
+  Avoid detection/blocking
+  Simulate requests from different geographic locations (to some extent)
+
+🧅How Tor Works (Conceptually)
+
+    Entry Node: You connect to the Tor network through this node. knows only IP 
+    Middle Node: Passes encrypted traffic to the next node. No knowledge of origin[IP] or destination
+    Exit Node: The final node that connects to the destination server (e.g., the website you're visiting). The website sees the IP
+    of the website hosted only; no knowledge of the origin.
+
+By default, you get a new IP every 10 minutes or so.
+
+SOCKS5 is a proxy protocol that routes your network traffic through a proxy server — in this case, Tor.
+"SOCKS" = Socket Secure.SOCKS5 is a proxy protocol that routes your network traffic through a proxy server — in this case, Tor.SOCKS = Socket Secure.
+
+Tor doesn’t work like regular HTTP proxies (like http://proxyserver:port). It speaks SOCKS5, which is low-level and allows more control.Using SOCKS5 lets you:
+    Anonymize your IP
+    Route requests through Tor without changing DNS or the browser
 
 

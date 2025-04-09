@@ -1,12 +1,55 @@
 import express from "express";
+import {Armory} from "../db/armorySchema.js" ;
+import {Articles} from "../db/articleSchema.js" ;
+import {Drugs} from "../db/drugsSchema.js" ;
+
 
 export const servicesRoute = express.Router()
 
-// Add routes
-servicesRoute.get("/all", (req, res) => {
-  res.send("List of Services");
+// Added routes for armory
+
+servicesRoute.get("/armory", async (req, res) => {
+  const guns = await Armory.find({});
+  res.json(guns);
 });
 
-servicesRoute.get("/:id", (req, res) => {
-  res.send(`Details for service ${req.params.id}`);
+servicesRoute.get("/armory/:id", async(req, res) => {
+  id = req.params.id ;
+  const gun = await Armory.findById(req.params.id)
+if(!gun)res.status(404).json({msg : "gun with this id doesn't exist"});
+res.json(gun);
 });
+
+
+
+// Added routes for drugs
+
+servicesRoute.get("/drugs", async (req, res) => {
+  const drug = await Drugs.find({});
+  res.json(drug);
+});
+
+servicesRoute.get("/drugs/:id", async(req, res) => {
+  id = req.params.id ;
+  const drug = await Drugs.findById(req.params.id)
+if(!gun)res.status(404).json({msg : "drug with this id doesn't exist"});
+res.json(drug);
+});
+
+
+
+// Added routes for article
+
+servicesRoute.get("/articles", async (req, res) => {
+  const articles = await Articles.find({});
+  res.json(articles);
+});
+
+servicesRoute.get("/articles/:id", async(req, res) => {
+  id = req.params.id ;
+  const article = await Articles.findById(req.params.id)
+if(!article)res.status(404).json({msg : "drug with this id doesn't exist"});
+res.json(article);
+});
+
+

@@ -5,7 +5,9 @@ const checkJWT = (req, res, next) => {
   const token = req.cookies.token;
 
   if (!token) {
-    return next(); // No token → Let them continue to login/register }
+   res.redirect("/auth");
+    res.status.json({msg: " The user is redirected to auth page "})
+  }
     try {
     const decoded = jwt.verify(token, pass);
     return res.status(302).json({ msg: "User is logged in" });
