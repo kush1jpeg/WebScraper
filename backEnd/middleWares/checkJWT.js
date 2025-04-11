@@ -12,7 +12,7 @@ const checkJWT = (req, res, next) => {
     const decoded = jwt.verify(token, pass);
     if (decoded) {
       res.status(302).json({ msg: "User is logged in" });
-      return res.redirect("/services");
+      next();
     }
   } catch (err) {
     res.status(402).json({ msg: "The jwt token is wrong" });

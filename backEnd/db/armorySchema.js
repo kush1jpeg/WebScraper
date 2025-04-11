@@ -1,14 +1,16 @@
 import mongoose from "mongoose";
+import { string } from "zod";
 
 const armorySchema = new mongoose.Schema({
-  name: String,
-  description: String,
+  gun: String,
+  vendor: String,
   price: String,
-  stock: Number,
+  description: String,
+
   createdAt: {
     type: Date,
     default: Date.now,
-  }
+  },
 });
 
 export const Armory = mongoose.model("Armory", armorySchema);

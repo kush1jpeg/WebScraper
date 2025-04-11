@@ -34,5 +34,7 @@ SOCKS5 is a proxy protocol that routes your network traffic through a proxy serv
 Tor doesn’t work like regular HTTP proxies (like http://proxyserver:port). It speaks SOCKS5, which is low-level and allows more control.Using SOCKS5 lets you:
     Anonymize your IP
     Route requests through Tor without changing DNS or the browser
+Its a protocol like https and http
+and the h after sock5 is bascially just proxy + dns
 
-
+Because Node is non-blocking — they don’t want a single line like system() that freezes the event loop. So instead, you spawn processes and react to their output as it comes in.

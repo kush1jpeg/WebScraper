@@ -12,6 +12,7 @@ async function scrapeDarknet(url) {
     res.request; // ← raw request data
     console.log(`Scraped from ${url}:\n`);
     if (res.status > 200 && res.status < 300) {
+      cheerioScrape(res.data);
     }
   } catch (err) {
     console.error(`Failed to scrape ${url}:`, err.message);
